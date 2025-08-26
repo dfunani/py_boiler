@@ -1,6 +1,6 @@
 import click
 from pathlib import Path
-from templates import README_CODE, MAIN_CODE
+from templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
 @click.group()
 def main():
@@ -18,7 +18,7 @@ def new():
 def hello_world():
     """Generate a Hello World app.py file."""
     target_files = [
-        "README_TEMPLATE.md", "app_template.py"
+        "README.md", "app.py", ".gitignore", "__init__.py"
     ]
     for file in target_files:
         target_file = Path("templates/"+file)
@@ -27,12 +27,14 @@ def hello_world():
             click.echo(f"⚠️  {file} already exists, not overwriting.")
         else:
             match file:
-                case "README_TEMPLATE.md":
+                case "README.md":
                     app_code = README_CODE
-                case "app_template.py":
+                case "app.py":
                     app_code = MAIN_CODE
+                case ".gitignore":
+                    app_code = GITIGNORE_CODE
                 case _:
-                    raise ValueError("Borkn")
+                    continue
             target_file.write_text(app_code)
             click.echo("✅ Created {file} with Hello World template.")
 
