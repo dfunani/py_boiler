@@ -21,7 +21,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["mypy", "ruff", "pytest", "bumpver"]
+dev = ["mypy", "ruff", "pytest", "bumpver", "twine", "build"]
 
 [project.urls]
 Homepage = "https://github.com/dfunani/py_boiler"
@@ -52,4 +52,8 @@ push = true
 "src/py_boil/__init__.py" = [
     '__version__ = "{version}"',
 ]
+
+[project.scripts]
+py-boiler = "py_boiler.app:main"
+
 
