@@ -14,6 +14,7 @@ A lightweight Python package that helps developers quickly bootstrap projects by
   * [Installation](#installation)
   * [Installing Dev Dependencies](#installing-dev-dependencies)
 * [Usage](#usage)
+* [Versioning](#versioning)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -38,6 +39,7 @@ Stop wasting time setting up the same boilerplate code for every project. **py\_
 
 * [Python 3.8+](https://www.python.org/)
 * [uv](https://github.com/astral-sh/uv) for dependency management and reproducible environments
+* [bumpver](https://pypi.org/project/bumpver/) for automated semantic versioning
 
 ---
 
@@ -93,6 +95,26 @@ project/
 ├── main.py
 └── README.md
 ```
+
+---
+
+## 🏷 Versioning
+
+**py\_boil** uses [bumpver](https://pypi.org/project/bumpver/) for semantic versioning:
+
+* Patch: bug fixes (0.1.0 → 0.1.1)
+* Minor: new backward-compatible features (0.1.1 → 0.2.0)
+* Major: breaking changes (0.2.0 → 1.0.0)
+
+### Bumping a version
+
+```bash
+bumpver patch   # 0.1.0 -> 0.1.1
+bumpver minor   # 0.1.1 -> 0.2.0
+bumpver major   # 0.2.0 -> 1.0.0
+```
+
+This updates the version in both `pyproject.toml` and `src/py_boil/__init__.py` and optionally creates a Git commit and tag.
 
 ---
 
