@@ -1,4 +1,4 @@
-# Py_Boiler 🔥
+# Py\_Boil 🔥
 
 A lightweight Python package that helps developers quickly bootstrap projects by generating ready-to-use boilerplate code. With **py\_boil**, you can scaffold Python applications in seconds — from simple scripts to full-featured project structures.
 
@@ -12,6 +12,7 @@ A lightweight Python package that helps developers quickly bootstrap projects by
 
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
+  * [Installing Dev Dependencies](#installing-dev-dependencies)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -35,38 +36,45 @@ Stop wasting time setting up the same boilerplate code for every project. **py\_
 
 ## 🏗️ Built With
 
-* [Python 3.x](https://www.python.org/)
+* [Python 3.8+](https://www.python.org/)
+* [uv](https://github.com/astral-sh/uv) for dependency management and reproducible environments
 
 ---
 
 ## 🚀 Getting Started
 
-To get a local copy up and running follow these simple steps.
-
 ### Prerequisites
 
-Make sure you have Python 3.x and pip installed:
+Make sure you have Python 3.8+ and [uv](https://github.com/astral-sh/uv) installed:
 
 ```bash
 python3 --version
-pip3 --version
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Installation
 
-Install **py\_boil** using pip:
+Install dependencies and create a virtual environment with `uv`:
 
 ```bash
-pip install py_boil
+uv sync
 ```
 
-Or install from source:
+This will:
+
+* Create a `.venv/` automatically
+* Install dependencies listed in `pyproject.toml`
+* Pin them exactly via a local `uv.lock` file
+
+### Installing Dev Dependencies
+
+To install optional or development packages (like testing or formatting tools):
 
 ```bash
-git clone https://github.com/your-username/py_boil.git
-cd py_boil
-pip install -e .
+uv sync --dev
 ```
+
+This will install your main dependencies **plus** all packages listed under `[project.optional-dependencies.dev]` in your `pyproject.toml`.
 
 ---
 
@@ -75,18 +83,16 @@ pip install -e .
 Generate a simple Hello World project:
 
 ```bash
-py_boil new hello-world
+uv run py_boil new hello-world
 ```
 
-Output:
+Example output (placeholder):
 
 ```text
 project/
 ├── main.py
 └── README.md
 ```
-
-(⚠️ Example output — real scaffolding TBD)
 
 ---
 
@@ -103,7 +109,13 @@ See the [open issues](https://github.com/your-username/py_boil/issues) for a ful
 
 ## 🤝 Contributing
 
-Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+We use [uv](https://github.com/astral-sh/uv) for dependency management. To set up the development environment:
+
+```bash
+uv sync --dev
+```
+
+To contribute:
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -121,6 +133,6 @@ Distributed under the **Apache 2.0 License**. See `LICENSE` for more information
 
 ## 📬 Contact
 
-Your Name – [@your\_twitter](https://twitter.com/your_twitter) – [your.email@example.com](mailto:your.email@example.com)
+Delali Funani – [dfunani@gmail.com](mailto:dfunani@gmail.com)
 
-Project Link: [https://github.com/your-username/py\_boil](https://github.com/your-username/py_boil)
+Project Link: [https://github.com/dfunani/py_boiler](https://github.com/dfunani/py_boiler)
