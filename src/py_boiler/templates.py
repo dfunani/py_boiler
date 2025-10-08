@@ -9,9 +9,11 @@ A simple boilerplate generator for Python projects.
 
 ## Quickstart
 ```bash
-pip install py-boiler
-py-boiler new hello-world
+python app.py # Run the app
 
+or
+
+python3 app.py # Depending on your system, you may need to use python3
 """
 
 MAIN_CODE = """\

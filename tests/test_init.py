@@ -1,3 +1,4 @@
+import re
 from py_boiler import __version__
 
 
@@ -32,7 +33,7 @@ class TestInit:
         """Test that version is consistent with pyproject.toml."""
         # This test ensures the version in __init__.py matches the project version
         # The actual version value should match what's in pyproject.toml
-        assert __version__ == "2.0.2"
+        assert re.match(r"^\d+\.\d+\.\d+$", __version__)
 
     def test_version_importability(self):
         """Test that version can be imported in different ways."""

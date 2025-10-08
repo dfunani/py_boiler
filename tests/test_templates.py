@@ -22,8 +22,11 @@ class TestTemplates:
         assert "## Features" in README_CODE
         assert "## Quickstart" in README_CODE
         assert "```bash" in README_CODE
-        assert "pip install py-boiler" in README_CODE
-        assert "py-boiler new hello-world" in README_CODE
+        assert "python app.py # Run the app" in README_CODE
+        assert (
+            "python3 app.py # Depending on your system, you may need to use python3"
+            in README_CODE
+        )
 
     def test_readme_code_content_quality(self):
         """Test the quality and completeness of README content."""
@@ -31,12 +34,11 @@ class TestTemplates:
         assert README_CODE.startswith("# ")
         assert "🚀" in README_CODE  # Should have emoji
 
-        # Should contain installation instructions
-        assert "pip install" in README_CODE.lower()
-
-        # Should contain usage examples
-        assert "```" in README_CODE  # Code blocks
-
+        assert "python app.py # Run the app" in README_CODE
+        assert (
+            "python3 app.py # Depending on your system, you may need to use python3"
+            in README_CODE
+        )
         # Should be informative
         assert len(README_CODE.split("\n")) > 10  # Should have multiple lines
 
