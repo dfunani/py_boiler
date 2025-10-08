@@ -115,9 +115,9 @@ class TestTemplates:
         ]
 
         for pattern in essential_patterns:
-            assert (
-                pattern in GITIGNORE_CODE
-            ), f"Missing essential gitignore pattern: {pattern}"
+            assert pattern in GITIGNORE_CODE, (
+                f"Missing essential gitignore pattern: {pattern}"
+            )
 
     def test_pyproject_toml_structure(self):
         """Test that PYPROJECT_TOML has the expected TOML structure."""
