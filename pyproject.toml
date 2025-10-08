@@ -53,6 +53,9 @@ push = true
     '__version__ = "{version}"',
 ]
 
+[dependency-groups]
+dev = ["mypy", "ruff", "pytest", "bumpver", "twine", "build", "pytest-cov"]
+
 [project.scripts]
 pyboiler = "py_boiler.app:main"
 
