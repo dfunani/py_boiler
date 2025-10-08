@@ -37,7 +37,7 @@ Stop wasting time setting up the same boilerplate code for every project. **py\_
 
 ## 🏗️ Built With
 
-* [Python 3.8+](https://www.python.org/)
+* [Python 3.10+](https://www.python.org/)
 * [uv](https://github.com/astral-sh/uv) for dependency management and reproducible environments
 * [bumpver](https://pypi.org/project/bumpver/) for automated semantic versioning
 
@@ -45,9 +45,40 @@ Stop wasting time setting up the same boilerplate code for every project. **py\_
 
 ## 🚀 Getting Started
 
+---
+
+## 👤 For Users
+
+### Installation
+
+Install the latest release from PyPI:
+
+```bash
+pip install py-boiler-tools
+```
+
+### Quick Usage
+
+After installation, you can use the CLI to scaffold a new project:
+
+```bash
+# Simple Hello World App
+pyboiler new basic
+```
+
+This will create a new files in the current project folder, including starter files.
+
+For more options, run:
+
+```bash
+pyboiler --help
+```
+
+---
+
 ### Prerequisites
 
-Make sure you have Python 3.8+ and [uv](https://github.com/astral-sh/uv) installed:
+Make sure you have Python 3.10+ and [uv](https://github.com/astral-sh/uv) installed:
 
 ```bash
 python3 --version
@@ -85,7 +116,7 @@ This will install your main dependencies **plus** all packages listed under `[pr
 Generate a simple Hello World project:
 
 ```bash
-uv run py_boil new hello-world
+uv run py_boil new basic
 ```
 
 Example output (placeholder):
@@ -158,3 +189,24 @@ Distributed under the **Apache 2.0 License**. See `LICENSE` for more information
 Delali Funani – [dfunani@gmail.com](mailto:dfunani@gmail.com)
 
 Project Link: [https://github.com/dfunani/py_boiler](https://github.com/dfunani/py_boiler)
+
+## Notes - PYPI
+
+To upload your package to PyPI, follow these steps:
+
+Ensure your package is ready for distribution (source code, metadata, etc.).
+
+Install Twine and Build if not already installed:
+
+`pip install twine build`
+
+Build your package:
+
+`python -m build`
+
+Upload to PyPI:
+
+`twine upload --repository pypi dist/*`
+
+After uploading, you can install your package from PyPI using:
+`pip install --index-url https://test.pypi.org/simple/ your-package-name`
