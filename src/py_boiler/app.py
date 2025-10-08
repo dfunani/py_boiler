@@ -36,10 +36,10 @@ def basic():
             case _:
                 app_code = ""
         try:
-            target_file.write_text(app_code, encoding='utf-8')
+            target_file.write_text(app_code, encoding="utf-8")
         except UnicodeEncodeError:
             # Fallback for systems with encoding issues
-            target_file.write_text(app_code, encoding='utf-8', errors='replace')
+            target_file.write_text(app_code, encoding="utf-8", errors="replace")
         click.echo(f"✅ Created {file} with Hello World template.")
 
 
