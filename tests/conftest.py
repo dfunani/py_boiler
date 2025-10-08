@@ -79,7 +79,7 @@ def version_info():
     """Provide version information for testing."""
     from py_boiler import __version__
 
-    return {"version": __version__, "expected_version": "2.0.1"}
+    return {"version": __version__, "expected_version": "2.0.2"}
 
 
 @pytest.fixture
