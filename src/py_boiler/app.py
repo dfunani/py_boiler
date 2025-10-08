@@ -2,6 +2,7 @@ import click
 from pathlib import Path
 from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
+
 @click.group()
 def main():
     """Py-Boiler: Generate boilerplate Python apps."""
@@ -17,12 +18,10 @@ def new():
 @new.command("basic")
 def basic():
     """Generate a Hello World app.py file."""
-    target_files = [
-        "README.md", "app.py", ".gitignore", "__init__.py"
-    ]
+    target_files = ["README.md", "app.py", ".gitignore", "__init__.py"]
     for file in target_files:
         target_file = Path(f"./{file}")
-        
+
         if target_file.exists():
             click.echo(f"⚠️  {file} already exists, not overwriting.")
             continue
@@ -38,6 +37,7 @@ def basic():
                 app_code = ""
         target_file.write_text(app_code)
         click.echo(f"✅ Created {file} with Hello World template.")
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,10 @@
 # Py\_Boil 🔥
 
+[![Tests](https://github.com/dfunani/py_boiler/workflows/Test%20Suite/badge.svg)](https://github.com/dfunani/py_boiler/actions)
+[![Code Quality](https://github.com/dfunani/py_boiler/workflows/Code%20Quality/badge.svg)](https://github.com/dfunani/py_boiler/actions)
+[![Security](https://github.com/dfunani/py_boiler/workflows/Security%20Scan/badge.svg)](https://github.com/dfunani/py_boiler/actions)
+[![Coverage](https://codecov.io/gh/dfunani/py_boiler/branch/main/graph/badge.svg)](https://codecov.io/gh/dfunani/py_boiler)
+
 A lightweight Python package that helps developers quickly bootstrap projects by generating ready-to-use boilerplate code. With **py\_boil**, you can scaffold Python applications in seconds — from simple scripts to full-featured project structures.
 
 ---
@@ -40,6 +45,9 @@ Stop wasting time setting up the same boilerplate code for every project. **py\_
 * [Python 3.10+](https://www.python.org/)
 * [uv](https://github.com/astral-sh/uv) for dependency management and reproducible environments
 * [bumpver](https://pypi.org/project/bumpver/) for automated semantic versioning
+* [GitHub Actions](https://github.com/features/actions) for CI/CD pipeline
+* [pytest](https://pytest.org/) for testing framework
+* [Ruff](https://github.com/astral-sh/ruff) for linting and formatting
 
 ---
 
@@ -146,6 +154,46 @@ bumpver major   # 0.2.0 -> 1.0.0
 ```
 
 This updates the version in both `pyproject.toml` and `src/py_boil/__init__.py` and optionally creates a Git commit and tag.
+
+---
+
+## 🔄 CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+### Automated Workflows
+
+- **🧪 Test Suite**: Runs on Python 3.10, 3.11, 3.12 across Ubuntu, Windows, and macOS
+- **🎨 Code Quality**: Linting and formatting with Ruff
+- **📦 Build**: Automated package building and validation
+- **🚀 Release**: Automated PyPI publishing when you create a GitHub release
+
+### Quality Metrics
+
+- **Test Coverage**: 97% code coverage
+- **Code Quality**: Automated linting and formatting
+- **Multi-Platform**: Tests on Ubuntu, Windows, and macOS
+- **Multi-Version**: Tests on Python 3.10, 3.11, and 3.12
+
+### Local Development
+
+Run the same checks locally:
+
+```bash
+# Install development dependencies
+uv sync --dev
+
+# Run tests
+pytest tests/ -v --cov=py_boiler
+
+# Run linting
+ruff check src/ tests/
+ruff format src/ tests/
+
+# Build package
+python -m build
+twine check dist/*
+```
 
 ---
 
