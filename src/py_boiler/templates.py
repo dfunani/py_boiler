@@ -65,4 +65,5 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 """
 
-VERSION_CODE = """__version__ = \"1.0.0-alpha\""""
+VERSION_CODE = """__version__ = \"1.0.0-alpha\"
+"""

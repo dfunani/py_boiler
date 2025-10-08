@@ -21,7 +21,7 @@ classifiers = [
 dependencies = ["click"]
 
 [project.optional-dependencies]
-dev = ["mypy", "ruff", "pytest", "bumpver", "twine", "build"]
+dev = ["mypy", "ruff", "pytest", "bumpver", "twine", "build", "pytest-cov"]
 
 [project.urls]
 Homepage = "https://github.com/dfunani/py_boiler"
