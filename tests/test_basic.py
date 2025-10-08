@@ -3,7 +3,7 @@ Basic tests that can run without external dependencies.
 These tests verify the core functionality without requiring pytest or click.
 """
 
-import sys
+import sys, re
 from pathlib import Path
 
 # Add the src directory to the path so we can import py_boiler
@@ -24,7 +24,7 @@ def test_version_format():
 
     assert isinstance(__version__, str)
     assert len(__version__) > 0
-    assert __version__ == "2.0.2"
+    assert re.match(r"^\d+\.\d+\.\d+$", __version__)
     print("✅ Version format correct")
 
 
