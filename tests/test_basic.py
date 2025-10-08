@@ -24,7 +24,7 @@ def test_version_format():
 
     assert isinstance(__version__, str)
     assert len(__version__) > 0
-    assert __version__ == "2.0.1"
+    assert __version__ == "2.0.2"
     print("✅ Version format correct")
 
 
