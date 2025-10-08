@@ -3,7 +3,8 @@ Basic tests that can run without external dependencies.
 These tests verify the core functionality without requiring pytest or click.
 """
 
-import sys, re
+import sys
+import re
 from pathlib import Path
 
 # Add the src directory to the path so we can import py_boiler
