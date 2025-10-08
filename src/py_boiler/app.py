@@ -37,7 +37,7 @@ def basic():
             case _:
                 app_code = ""
         target_file.write_text(app_code)
-        click.echo("✅ Created {file} with Hello World template.")
+        click.echo(f"✅ Created {file} with Hello World template.")
 
 if __name__ == "__main__":
     main()
