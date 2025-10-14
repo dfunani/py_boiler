@@ -201,7 +201,7 @@ class TestAppIntegration:
     def test_import_structure(self):
         """Test that all necessary imports work correctly."""
         from py_boiler.app import main, new, basic
-        from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
+        from py_boiler.basic.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
         # Test that imports don't raise exceptions
         assert main is not None

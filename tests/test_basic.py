@@ -31,7 +31,7 @@ def test_version_format():
 
 def test_templates_import():
     """Test that templates can be imported."""
-    from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
+    from py_boiler.basic.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
     assert isinstance(README_CODE, str)
     assert isinstance(MAIN_CODE, str)
@@ -54,7 +54,7 @@ def test_app_import():
 
 def test_template_content():
     """Test that templates contain expected content."""
-    from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
+    from py_boiler.basic.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
     # Test README content
     assert "# py_boiler 🚀" in README_CODE
@@ -75,7 +75,7 @@ def test_template_content():
 
 def test_main_code_executability():
     """Test that the main code template is valid Python."""
-    from py_boiler.templates import MAIN_CODE
+    from py_boiler.basic.templates import MAIN_CODE
 
     compile(MAIN_CODE, "<string>", "exec")
     print("✅ Main code template is valid Python")

@@ -6,7 +6,8 @@ from pathlib import Path
 from click.testing import CliRunner
 
 from py_boiler.app import main
-from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
+from py_boiler.basic import templates
+from py_boiler.basic.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 from py_boiler import __version__
 
 
@@ -113,7 +114,7 @@ class TestIntegration:
         assert py_boiler.__version__ == __version__
 
         # Test submodule imports
-        from py_boiler import app, templates
+        from py_boiler import app
 
         assert app is not None
         assert templates is not None
@@ -126,7 +127,7 @@ class TestIntegration:
         assert basic is not None
 
         # Test template imports
-        from py_boiler.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
+        from py_boiler.basic.templates import README_CODE, MAIN_CODE, GITIGNORE_CODE
 
         assert README_CODE is not None
         assert MAIN_CODE is not None

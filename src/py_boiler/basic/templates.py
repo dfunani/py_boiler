@@ -1,11 +1,10 @@
-README_CODE = """# py_boiler 🚀
+README_CODE = """# {project_name}
 
-A simple boilerplate generator for Python projects.
+A simple Python project.
 
 ## Features
 - Generate a `Hello, World!` app with one command
 - Modern Python packaging (`pyproject.toml`)
-- Extensible for future boilerplates
 
 ## Quickstart
 ```bash
@@ -45,26 +44,26 @@ dist/
 
 PYPROJECT_TOML = """
 [project]
-name = "py-boiler"
-version = "1.0.0-alpha"
-description = "A boilerplate generator for Python apps"
+name = \"{project_name}\"
+version = \"1.0.0-alpha\"
+description = \"A Simple Python app\"
 authors = [
-    { name = "Your Name", email = "your@email.com" }
+    { name = \"Your Name\", email = \"your@email.com\" }
 ]
-readme = "README.md"
-license = { text = "MIT" }
-requires-python = ">=3.9"
+readme = \"README.md\"
+license = { text = \"MIT\" }
+requires-python = \">=3.9\"
 
 dependencies = [
-    "click>=8.0",
+    \"click>=8.0\",
 ]
 
 [project.scripts]
-py-boiler = "app:main"
+{project_script} = \"app:main\"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = [\"hatchling\"]
+build-backend = \"hatchling.build\"
 """
 
 VERSION_CODE = """__version__ = \"1.0.0-alpha\"

@@ -85,7 +85,7 @@ def version_info():
 @pytest.fixture
 def template_constants():
     """Provide access to all template constants for testing."""
-    from py_boiler.templates import (
+    from py_boiler.basic.templates import (
         README_CODE,
         MAIN_CODE,
         GITIGNORE_CODE,
